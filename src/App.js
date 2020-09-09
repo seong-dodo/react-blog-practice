@@ -64,16 +64,32 @@ function App() {
         <p>2월19일 발행</p>
         <hr/>
 
+
+       <div className="publish" >
+         <input onChange={ (e)=>{ 입력값변경(e.target.value) } } />
+         <button onClick={ ()=>{
+           let arrayCopy = [...글제목];
+           arrayCopy.unshift(입력값);
+           글제목변경( arrayCopy )
+         } }>저장</button>
+       </div>
+
+
+
       {/*  <button onClick={ ()=>{ 누른제목변경(0) } }>버튼1</button>
         <button onClick={ ()=>{ 누른제목변경(1) } }>버튼2</button>
         <button onClick={ ()=>{ 누른제목변경(2) } }>버튼3</button> */}
-        <input onChange={ (e)=>{ 입력값변경(e.target.value) } } />
+     
+       {/*  <input onChange={ (e)=>{ 입력값변경(e.target.value) } } >   */}
         <button onClick={ ()=>{ newpost열기닫기() } }>새글작성</button>
         <br />
-        {입력값}
+       
+      
+
+
       </div> 
 
-
+     {/*
      {
        글제목.map(function (글, i) {
          return (
@@ -86,6 +102,8 @@ function App() {
       })
       
      }
+ 
+    */}
 
      {
        newpost === true
