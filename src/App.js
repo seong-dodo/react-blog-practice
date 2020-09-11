@@ -65,6 +65,7 @@ function App() {
         <hr/>
 
 
+
        <div className="publish" >
          <input onChange={ (e)=>{ 입력값변경(e.target.value) } } />
          <button onClick={ ()=>{
@@ -85,8 +86,8 @@ function App() {
         <br />
        
       
-
-
+       <Profile />
+ 
       </div> 
 
      {/*
@@ -121,6 +122,36 @@ function App() {
     </div>
   );
 }
+
+
+
+
+//옛날 React문법
+
+class Profile extends React.Component {
+  constructor(){
+    super();
+    this.state = { name : 'Kim', age : '30' }
+  }
+
+  changeName = ()=> {
+    this.setState( { name : 'Park' } )
+  }
+
+  render(){
+    return(
+      <div>
+        <h3> 저는 { this.state.name } 입니다 </h3>    
+        <button onClick={ this.changeName }>로그인</button>      
+      </div>
+    )
+  }
+}
+
+ 
+
+// 신문법을 사용합시다!
+
 
 function Newpost(props){
  return(
